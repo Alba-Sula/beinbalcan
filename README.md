@@ -20,7 +20,7 @@ Some pictures of the app:
 
 ![](assets/readMePics/Screenshot_20200223-153052.jpg)
 
-#**Top Attractions Interface**
+# **Top Attractions Interface**
 
 ![](assets/readMePics/Screenshot_20200223-153106.jpg)
 
