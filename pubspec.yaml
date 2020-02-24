@@ -1,0 +1,172 @@
+name: be_in_balcan
+description: A new Flutter project.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  font_awesome_flutter: ^8.0.1
+  url_launcher: ^5.0.5
+  carousel_pro: ^1.0.0
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+   - assets/bosnia.jpg
+   - assets/albania.jpg
+   - assets/bulgaria.jpg
+   - assets/croatia.jpg
+   - assets/greece.jpg
+   - assets/kosova.jpg
+   - assets/macedonia.jpg
+   - assets/montenegro.jpg
+   - assets/serbia.jpg
+   - assets/slovenia.jpg
+   - assets/turqia.jpg
+   - assets/Olympic.jpg
+   - assets/Vrelo Bosne.jpeg
+   - assets/Vrelo Bosne 5.jpeg
+   - assets/BosniaInterface.jpg
+   - assets/Vrelo Bosne Roman Bridge.jpg
+   - assets/Cathedral of Jesus Heart 1.jpg
+   - assets/Cathedral of Jesus Heart 2.jpg
+   - assets/Cathedral of Jesus Heart 3.jpg
+   - assets/Cathedral of Jesus Heart 4.jpg
+   - assets/Treskavica.jpeg
+   - assets/Treskavica 5.jpg
+   - assets/Treskavica 7.jpg
+   - assets/Rakitnica.jpg
+   - assets/Rakitnica River Canyon and Lukomir.jpg
+   - assets/Bascarsija.jpg
+   - assets/Bijambare Caves 1.jpg
+   - assets/Bijambare Caves 2.jpg
+   - assets/Bijambare Caves 3.jpg
+   - assets/City Hall 1.jpg
+   - assets/City Hall 2.jpg
+   - assets/City Hall 3.jpg
+   - assets/Historical Museum of B&H.jpg
+   - assets/Historical Museum of B&H 1.jpg
+   - assets/Historical Museum of B&H 2.jpg
+   - assets/Despic House.jpg
+   - assets/Despic House 2.jpg
+   - assets/Jewish Museum.jpg
+   - assets/Lukomir (2).jpg
+   - assets/Lukomir (3).jpg
+   - assets/Jewish Museum 2.jpg
+   - assets/Jewish Museum Synagogue.jpg
+   - assets/Museum Tunnel DB 5.jpg
+   - assets/Museum Tunnel DB.jpg
+   - assets/Museum Tunnel DB 6.jpg
+   - assets/Museum of Old Orthodox Church (1).jpg
+   - assets/Museum of Old Orthodox Church (2).jpg
+   - assets/Museum of Old Orthodox Church 3.jpg
+   - assets/Museum 1878 1914 ATR.jpg
+   - assets/Museum 1878 1914 (2).jpg
+   - assets/Museum 1878 1914.jpg
+   - assets/Museum of Sevdah 1.jpg
+   - assets/National Museum of BiH (2).jpg
+   - assets/National Museum Haggadah.jpg
+   - assets/Olympic.jpg
+   - assets/balkan.jpg
+   - assets/Olympic Fire.jpg
+   - assets/Olympic Mountains 2.jpeg
+   - assets/Olympic Mountains Bjelasnica (2).jpg
+   - assets/Skakavac Waterfall (2).jpg
+   - assets/Skakavac Waterfall (3).jpg
+   - assets/Skakavac Waterfall (4).jpg
+   - assets/Svrzo House.jpg
+   - assets/Svrzo House 1.jpg
+   - assets/Svrzo House 3.jpg
+   - assets/Trebevic 4.jpg
+   - assets/Trebevic 3.jpg
+   - assets/Trebevic 5.jpg
+   - assets/Inat kuca Spite House Sarajevo.jpg
+   - assets/Spite House.jpg
+   - assets/Trebevic 5.jpg
+   - assets/Bascarsija 2.jpg
+   - assets/Bascarsija 3.jpg
+   - assets/Traditional Crafts 2.jpg
+   - assets/Traditional Crafts 0.jpg
+   - assets/Traditional Crafts 7.jpg
+   - assets/stecak_Cotton-Bag-Mockup.jpg
+   - assets/Reklama-Urban_Bosancica2.jpg
+   - assets/Sarajevo City Centre Shooping Mall (4).jpg
+   - assets/Saraci Street.jpg
+   - assets/Plastic Fantastik.jpg
+   - assets/phytoo.jpg
+   - assets/phyto.jpg
+   - assets/phyto farm.jpg
+   - assets/Importanne Shopping Mall.jpg
+   - assets/Egoist-27b.jpg
+   - assets/Bazerdzan.jpg
+   - assets/BBI Shopping Mall (2).jpg
+   - assets/BHCrafts 1.jpg
+   - assets/BHCrafts 2.jpg
+   - assets/Bosnian Kingdom.jpg
+   - assets/kosovo1.jpg
+   - assets/kosovo2.jpg
+   - assets/kosovo3.jpg
+   - assets/kosovo4.jpg
+   - assets/kosovo5.jpg
+   - assets/kosovo6.jpg
+
+  #  - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
