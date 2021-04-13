@@ -5,6 +5,18 @@ import '../kosovo/KosovoInterface.dart';
 import '../widgets/ColumnHomePage.dart';
 import '../widgets/RowHomePage.dart';
 
+double displayHeight(BuildContext context){
+  Size size = MediaQuery.of(context).size;
+  double height = size.height;
+  double heightStatusBar = MediaQuery.of(context).padding.top;
+  double heightAppBar = kToolbarHeight;
+  return height-heightStatusBar-heightAppBar-40;
+}
+
+double displayWidth(BuildContext context){
+  return (MediaQuery.of(context).size.width - 30)/2;
+}
+
 class HomePage extends StatelessWidget {
   //variable place BeInAlbania Column
   final String placeAlbania = 'BeInAlbania';
@@ -28,6 +40,8 @@ class HomePage extends StatelessWidget {
   final String placeMacedonia = 'BeInMacedonia';
   final String macedoniaImageRoute = 'assets/macedonia.jpg';
   final color1Macedonia = Colors.orange[300];
+
+
 
   //creating the modal sheet About Us
   _showModalSheetAboutUs(context) {
@@ -102,6 +116,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+      double h = displayHeight(context);
+      double w = displayWidth(context);
+      double columnHeight = h*0.3;
+      double rowHeight = h*0.4;
+
     return Scaffold(
       drawer: Drawer(
         child: Column(
@@ -156,98 +176,87 @@ class HomePage extends StatelessWidget {
 
       //the body
 
-      body: Container(
-        margin: EdgeInsets.only(
-            top: 5,
-            bottom: 5,
-            left: 15,
-            right: 15), //to be fixed this is for the margin aaround the edges
-        child: Column(
-          children: <Widget>[
-            GestureDetector(
-              child: ColumnHomePage(
-                placeName: placeAlbania,
-                imageRoute: albaniaImageRoute,
-                color1: color1Albania,
-              ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => BosniaInterface(),
+      body: SafeArea(
+              child: Container(
+                padding: EdgeInsets.all(10),
+           child: Column(
+            children: <Widget>[ 
+              GestureDetector(
+                child: ColumnHomePage(
+                  placeName: placeAlbania,
+                  imageRoute: albaniaImageRoute,
+                  color1: color1Albania,
+                  heightWidget: columnHeight,
+                ),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => BosniaInterface(),
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.all(5),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                GestureDetector(
-                  child: RowHomePage(
-                    placeName: placeBosnia,
-                    imageRoute: bosniaImageRoute,
-                    color1: color1Bosnia,
-                  ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => BosniaInterface(),
+              Container(
+                height: 10,
+              ),
+              Row(
+               children: <Widget>[
+                  GestureDetector(
+                    child: RowHomePage(
+                      placeName: placeBosnia,
+                      imageRoute: bosniaImageRoute,
+                      color1: color1Bosnia,
+                      widthWidget: w,
+                      heightWidget: rowHeight,
+                    ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => BosniaInterface(),
+                      ),
                     ),
                   ),
-                ),
-                GestureDetector(
-                  child: RowHomePage(
-                    placeName: placeKosovo,
-                    imageRoute: kosovoImageRoute,
-                    color1: color1Kosovo,
+                  Container(
+                    width: 10,
                   ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => KosovoInterface(),
+                  GestureDetector(
+                    child: RowHomePage(
+                      placeName: placeKosovo,
+                      imageRoute: kosovoImageRoute,
+                      color1: color1Kosovo,                      
+                      widthWidget: w,
+                      heightWidget: rowHeight,
+                    ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => KosovoInterface(),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.all(5),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                GestureDetector(
-                  child: RowHomePage(
-                    placeName: placeMontenegro,
-                    imageRoute: montenegroImageRoute,
-                    color1: color1Montenegro,
-                  ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => BosniaInterface(),
+                ]),
+              
+              Container(
+                height: 10,
+              ),
+               GestureDetector(
+                    child: ColumnHomePage(
+                      placeName: placeMacedonia,
+                      imageRoute: macedoniaImageRoute,
+                      color1: color1Macedonia,
+                      heightWidget: columnHeight,
+                    ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => BosniaInterface(),
+                      ),
                     ),
                   ),
-                ),
-                GestureDetector(
-                  child: RowHomePage(
-                    placeName: placeMacedonia,
-                    imageRoute: macedoniaImageRoute,
-                    color1: color1Macedonia,
-                  ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => BosniaInterface(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
           ],
+              ),
+
         ),
-      ),
+      ),    
     );
   }
 }

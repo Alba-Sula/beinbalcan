@@ -10,9 +10,11 @@ class Structure extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "BeInBalkan",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primaryColor: Colors.deepOrange,
+        accentColor: Colors.deepOrangeAccent,
       ),
       home: HomePage()
     );

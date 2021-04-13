@@ -5,11 +5,15 @@ class RowHomePage extends StatelessWidget {
   final String placeName;
   final String imageRoute;
   final Color color1;
+  final double heightWidget;
+  final double widthWidget;
 
   RowHomePage({
     @required this.placeName,
     @required this.imageRoute,
     @required this.color1,
+    @required this.heightWidget,
+    @required this.widthWidget,
   });
 
   @override
@@ -27,9 +31,10 @@ class RowHomePage extends StatelessWidget {
                   fontSize: 20.0),
             ),
             alignment: Alignment(0.0, 0.0),
-            height: 250,
-            width: 180,
+            height: heightWidget,
+            width: widthWidget,
             decoration: BoxDecoration(
+              borderRadius:BorderRadius.circular(10),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(imageRoute),
@@ -37,9 +42,10 @@ class RowHomePage extends StatelessWidget {
             ),
           ),
           Container(
-            height: 250.0,
-            width: 180.0,
+            height: heightWidget,
+            width: widthWidget,
             decoration: BoxDecoration(
+              borderRadius:BorderRadius.circular(10),
                 gradient: LinearGradient(
                     begin: FractionalOffset.bottomCenter,
                     end: FractionalOffset.center,

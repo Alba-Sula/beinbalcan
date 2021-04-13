@@ -1,3 +1,6 @@
+
+
+import 'package:be_in_balcan/pages/Sarajevo.dart';
 import 'package:be_in_balcan/pages/TopAttractionsBosnia.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,6 +10,18 @@ import '../pages/PreSarajevo.dart';
 import '../pages/Transportation.dart';
 import '../widgets/InterfaceIcons.dart';
 import './RestaurantSarajevo.dart';
+
+double displayHeight(BuildContext context) {
+  Size size = MediaQuery.of(context).size;
+  double height = size.height;
+  double heightStatusBar = MediaQuery.of(context).padding.top;
+  double heightAppBar = kToolbarHeight;
+  return height - heightStatusBar - heightAppBar - 20;
+}
+
+double displayWidth(BuildContext context) {
+  return (MediaQuery.of(context).size.width - 20);
+}
 
 class BosniaInterface extends StatelessWidget {
   //sarajevo icon
@@ -88,174 +103,249 @@ class BosniaInterface extends StatelessWidget {
     color: Colors.white,
   );
 
+
   @override
   Widget build(BuildContext context) {
+    double heightDev = displayHeight(context);
+    double widthDev = displayWidth(context);    
+    double iconHeight =(heightDev*0.4 -50)/3;
+    double iconWidth = (widthDev-40)/3;
+
     return Scaffold(
       appBar: new AppBar(
         title: new Text('BeInBosnia'),
         backgroundColor: Colors.deepOrange,
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
             Container(
-              //margin: EdgeInsets.only(
-              // left: 15.0, top: 15.0, right: 15.0, bottom: 50),
               alignment: Alignment(0.0, 0.0),
-              height: MediaQuery.of(context).size.height * 0.45,
+              height: heightDev * 0.4,
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage('assets/Cathedral of Jesus Heart 1.jpg'),
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(7),
+            Container(
+              height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameSarajevo,
-                        gradientColor1: gradientColor1Sarajevo,
-                        gradientColor2: gradientColor2Sarajevo,
-                        iconWidget: iconWidgetSarajevo,
-                      ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => PreSarajevo(),
+                Container(
+                 child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Container(
+                        child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameSarajevo,
+                            gradientColor1: gradientColor1Sarajevo,
+                            gradientColor2: gradientColor2Sarajevo,
+                            iconWidget: iconWidgetSarajevo,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => Sarajevo(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameRestaurants,
-                        gradientColor1: gradientColor1Restaurants,
-                        gradientColor2: gradientColor2Restaurants,
-                        iconWidget: iconWidgetRestaurants,
+                      Container(
+                        height: 10,
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => RestaurantSarajevo(),
+                      Container(
+                       child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameRestaurants,
+                            gradientColor1: gradientColor1Restaurants,
+                            gradientColor2: gradientColor2Restaurants,
+                            iconWidget: iconWidgetRestaurants,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  RestaurantSarajevo(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameDictionary,
-                        gradientColor1: gradientColor1Dictionary,
-                        gradientColor2: gradientColor2Dictionary,
-                        iconWidget: iconWidgetDictionary,
+                      Container(
+                        height: 10,
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => PreSarajevo(),
+                      Container(
+                        child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameDictionary,
+                            gradientColor1: gradientColor1Dictionary,
+                            gradientColor2: gradientColor2Dictionary,
+                            iconWidget: iconWidgetDictionary,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => PreSarajevo(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        height: 10,
+                      ),
+                    ],
+                  ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameTopAttractions,
-                        gradientColor1: gradientColor1TopAttractions,
-                        gradientColor2: gradientColor2TopAttractions,
-                        iconWidget: iconWidgetTopAttractions,
-                      ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => TopAttractionsBosnia(),
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Container(
+                        child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameTopAttractions,
+                            gradientColor1: gradientColor1TopAttractions,
+                            gradientColor2: gradientColor2TopAttractions,
+                            iconWidget: iconWidgetTopAttractions,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  TopAttractionsBosnia(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameTransportation,
-                        gradientColor1: gradientColor1Transportation,
-                        gradientColor2: gradientColor2Transportation,
-                        iconWidget: iconWidgetTransportation,
+                      Container(
+                        height: 10,
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => Transportation(),
+                      Container(
+                       child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameTransportation,
+                            gradientColor1: gradientColor1Transportation,
+                            gradientColor2: gradientColor2Transportation,
+                            iconWidget: iconWidgetTransportation,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => Transportation(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameTours,
-                        gradientColor1: gradientColor1Tours,
-                        gradientColor2: gradientColor2Tours,
-                        iconWidget: iconWidgetTours,
+                      Container(
+                        height: 10,
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => Transportation(),
+                      Container(
+                        child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameTours,
+                            gradientColor1: gradientColor1Tours,
+                            gradientColor2: gradientColor2Tours,
+                            iconWidget: iconWidgetTours,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => Transportation(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        height: 10,
+                      ),
+                    ],
+                  ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameAccomodation,
-                        gradientColor1: gradientColor1Accomodation,
-                        gradientColor2: gradientColor2Accomodation,
-                        iconWidget: iconWidgetAccomodation,
-                      ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => PreSarajevo(),
+                Container(
+                  
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Container(
+                        child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameAccomodation,
+                            gradientColor1: gradientColor1Accomodation,
+                            gradientColor2: gradientColor2Accomodation,
+                            iconWidget: iconWidgetAccomodation,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => PreSarajevo(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameShops,
-                        gradientColor1: gradientColor1Shops,
-                        gradientColor2: gradientColor2Shops,
-                        iconWidget: iconWidgetShops,
+                      Container(
+                        height: 10,
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => ShopsInterface(),
+                      Container(
+                       child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameShops,
+                            gradientColor1: gradientColor1Shops,
+                            gradientColor2: gradientColor2Shops,
+                            iconWidget: iconWidgetShops,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => ShopsInterface(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      child: InterfaceIcons(
-                        textName: textNameAudioGuide,
-                        gradientColor1: gradientColor1AudioGuide,
-                        gradientColor2: gradientColor2AudioGuide,
-                        iconWidget: iconWidgetAudioGuide,
+                      Container(
+                        height: 10,
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => ShopsInterface(),
+                      Container(
+                        child: GestureDetector(
+                          child: InterfaceIcons(
+                            iconHeight: iconHeight,
+                            iconWidth: iconWidth,
+                            textName: textNameAudioGuide,
+                            gradientColor1: gradientColor1AudioGuide,
+                            gradientColor2: gradientColor2AudioGuide,
+                            iconWidget: iconWidgetAudioGuide,
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => ShopsInterface(),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

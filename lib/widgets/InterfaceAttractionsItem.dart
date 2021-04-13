@@ -16,6 +16,7 @@ class InterfaceAttractionsItem extends StatelessWidget {
           alignment: Alignment(0.0, 0.0),
           height: 200,
           decoration: BoxDecoration(
+            borderRadius:BorderRadius.circular(15),
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(imgPath),

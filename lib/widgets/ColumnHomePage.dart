@@ -4,11 +4,13 @@ class ColumnHomePage extends StatelessWidget {
   final String placeName;
   final String imageRoute;
   final Color color1;
+  final double heightWidget;
 
   ColumnHomePage({
     @required this.placeName,
     @required this.imageRoute,
     @required this.color1,
+    @required this.heightWidget
   });
 
   @override
@@ -25,23 +27,25 @@ class ColumnHomePage extends StatelessWidget {
                   color: Color.fromARGB(255, 255, 255, 255),
                   fontSize: 20.0),
             ),
+           
             alignment: Alignment(0.0, 0.0),
-            height: 180,
+            height: heightWidget,
             width: double.infinity,
             decoration: BoxDecoration(
+               borderRadius:BorderRadius.circular(10),
               image: DecorationImage(
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 image: AssetImage(imageRoute),
               ),
             ),
           ),
-          //done till now
+          
           //this is responsible for the gradient
           Container(
-            //margin: EdgeInsets.only(left: 25.0, top: 120.0, right: 25.0),
-            height: 180,
+            height: heightWidget,
             width: double.infinity,
             decoration: BoxDecoration(
+               borderRadius:BorderRadius.circular(10),
                 gradient: LinearGradient(
                     begin: FractionalOffset.bottomCenter,
                     end: FractionalOffset.center,
@@ -59,11 +63,3 @@ class ColumnHomePage extends StatelessWidget {
     );
   }
 }
-/*
-onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => BosniaInterface(),
-                ),
-              ),
-*/

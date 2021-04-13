@@ -5,6 +5,14 @@ import '../pages/Sarajevo.dart';
 
 import '../widgets/CitiesInterface.dart';
 
+double displayHeight(BuildContext context) {
+  Size size = MediaQuery.of(context).size;
+  double height = size.height;
+  double heightStatusBar = MediaQuery.of(context).padding.top;
+  double heightAppBar = kToolbarHeight;
+  return height - heightStatusBar - heightAppBar - 20;
+}
+
 class PreSarajevo extends StatelessWidget {
   final String sarajevoNameS = 'Sarajevo';
   final String photoRouteS = 'assets/Svrzo House.jpg';
@@ -17,26 +25,23 @@ class PreSarajevo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double heightWidget = (displayHeight(context) - 20) / 3;
+
     final appBar = new AppBar(
       title: new Text('BeInBosnia'),
       backgroundColor: Colors.deepOrange,
     );
     return Scaffold(
       appBar: appBar,
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height -
-              appBar.preferredSize.height -
-              MediaQuery.of(context).padding.top -
-              20,
-          margin: EdgeInsets.all(10),
+      body: Container(
+          padding: EdgeInsets.all(10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               GestureDetector(
                 child: CitiesInterface(
                   backgroundImage: photoRouteS,
                   cityName: sarajevoNameS,
+                  heightWidget: heightWidget,
                 ),
                 onTap: () => Navigator.push(
                   context,
@@ -45,32 +50,37 @@ class PreSarajevo extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(5),
-              ),
-              GestureDetector(
-                child: CitiesInterface(
-                  backgroundImage: photoRouteTour,
-                  cityName: sarajevoNameTour,
-                ),
-                onTap: null,
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-              ),
-              GestureDetector(
-                child: CitiesInterface(
-                  backgroundImage: photoRouteTop,
-                  cityName: sarajevoNameTop,
-                ),
-                onTap: () => Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context)  => TopAttractionsBosnia()           
-                      ),),
-              ),
-            ],
-          ),
+          //     Container(
+          //       height:10
+          //     ),
+          //     GestureDetector(
+          //       child: CitiesInterface(
+          //         backgroundImage: photoRouteTour,
+          //         cityName: sarajevoNameTour,
+          //          height: height,
+          //       ),
+          //       onTap: null,
+          //     ),
+          //     Container(
+          //       height:10
+          //     ),
+          //     GestureDetector(
+          //       child: CitiesInterface(
+          //         backgroundImage: photoRouteTop,
+          //         cityName: sarajevoNameTop,
+          //          height: height,
+          //       ),
+          //       onTap: () => Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (BuildContext context) =>
+          //                 TopAttractionsBosnia()),
+          //       ),
+          //     ),
+           ],
+          
+           ),
         ),
-      ),
     );
   }
 }

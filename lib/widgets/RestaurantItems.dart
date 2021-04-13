@@ -27,10 +27,7 @@ class RestaurantItems extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.3,
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
-                  ),
+                  borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(photo),
